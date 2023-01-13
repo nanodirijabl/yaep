@@ -1,0 +1,7 @@
+ARG_ENABLE('yaep', 'yaep support', 'no');
+
+if (PHP_YAEP != 'no') {
+	AC_DEFINE('HAVE_YAEP', 1, 'yaep support enabled');
+
+	EXTENSION('yaep', 'yaep.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
